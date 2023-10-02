@@ -1,0 +1,12 @@
+import math
+
+filename = r"C:\Users\Tommi\Forritun Visual stud\project_03_extra_files\small_locations.txt"
+f = open(filename,'r')
+
+lines = [[float(num) for num in line.split()] for line in f.readlines()]
+
+ref_line = lines[0]
+
+for line in lines[1:]:
+    distance = math.sqrt((line[0] - ref_line[0])**2 + (line[1] - ref_line[1])**2)
+    print(distance)
